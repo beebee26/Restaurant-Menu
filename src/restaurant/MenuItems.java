@@ -1,34 +1,49 @@
 package restaurant;
 
+import java.util.HashMap;
+
 public class MenuItems {
 
-    private String name;
-    private Double price = 0.00;
-    private String description;
-    private String category;
-    private boolean isNew;
+    public boolean isNew;
+
+    public HashMap<String, String> menuItems = new HashMap<String, String>();
 
     public void setName(String aName) {
-        name = aName;
+        menuItems.put("Name", aName);
     }
     public String getName() {
-        return name;
+        return menuItems.get("Name");
     }
 
-    public void setPrice(Double aPrice) { price = aPrice; }
-    public Double getPrice() { return price; }
+
+    public void setPrice(String aPrice) {
+        menuItems.put("Price", aPrice);
+    }
+    public String getPrice() {
+        return menuItems.get("Price");
+    }
 
     public void setDescription(String aDescription) {
-        description = aDescription;
+        menuItems.put("Description",  aDescription);
     }
     public String getDescription() {
-        return description;
+        return menuItems.get("Description");
     }
-
     public void setCategory(String aCategory) {
-        category = aCategory;
+        menuItems.put("Category", aCategory);
     }
     public String getCategory() {
-        return category;
+        return menuItems.get("Category");
+    }
+
+    public void setIsNew(boolean aIsNew) {
+        isNew = aIsNew;
+    }
+    public boolean getIsNew() {
+        return isNew;
+    }
+
+    public String getValues() {
+        return menuItems.values().toString();
     }
 }
