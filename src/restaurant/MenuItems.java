@@ -1,52 +1,56 @@
 package restaurant;
 
+import java.util.ArrayList;
 import java.util.HashMap;
 
 public class MenuItems {
 
     private boolean isNew;
 
-    private HashMap<String, String> menuItems = new HashMap<>();
+    private ArrayList<Object> menuItems = new ArrayList<>();
 
     public void setName(String aName) {
-        menuItems.put("Name", aName);
+
+        menuItems.add(aName);
+        //System.out.println(menuItems.get(1));
     }
-    public String getName() {
-        return menuItems.get("Name");
+    public Object getName() {
+        //System.out.println(menuItems.get(1));
+        return menuItems.get(0);
     }
 
-    public HashMap<String, String> getWholeItem() {
-        return menuItems;
-    }
+   // public HashMap<String, String> getWholeItem() {
+     //   return menuItems;
+    //}
 
-    public void setPrice(String aPrice) {
-        menuItems.put("Price", aPrice);
+    public void setPrice(Double aPrice) {
+        menuItems.add(aPrice);
     }
-    public String getPrice() {
-        return menuItems.get("Price");
+    public Object getPrice() {
+        return menuItems.get(1);
     }
 
     public void setDescription(String aDescription) {
-        menuItems.put("Description",  aDescription);
+        menuItems.add(aDescription);
     }
-    public String getDescription() {
-        return menuItems.get("Description");
+    public Object getDescription() {
+        return menuItems.get(2);
     }
     public void setCategory(String aCategory) {
-        menuItems.put("Category", aCategory);
+        menuItems.add(aCategory);
     }
-    public String getCategory() {
-        return menuItems.get("Category");
+    public Object getCategory() {
+        return menuItems.get(3);
     }
 
-    public void setIsNew(boolean aIsNew) {
-        isNew = aIsNew;
+    public void setIsNew(Boolean aIsNew) {
+        menuItems.add(aIsNew);
     }
-    public boolean getIsNew() {
-        return isNew;
+    public Object getIsNew() {
+        return menuItems.get(4);
     }
 
     public String getValues() {
-        return menuItems.values().toString();
+        return menuItems.toString();
     }
 }
