@@ -4,9 +4,9 @@ import java.util.HashMap;
 
 public class MenuItems {
 
-    public boolean isNew;
+    private boolean isNew;
 
-    public HashMap<String, String> menuItems = new HashMap<String, String>();
+    private HashMap<String, String> menuItems = new HashMap<>();
 
     public void setName(String aName) {
         menuItems.put("Name", aName);
@@ -15,6 +15,9 @@ public class MenuItems {
         return menuItems.get("Name");
     }
 
+    public HashMap<String, String> getWholeItem() {
+        return menuItems;
+    }
 
     public void setPrice(String aPrice) {
         menuItems.put("Price", aPrice);

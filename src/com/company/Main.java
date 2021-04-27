@@ -41,10 +41,10 @@ public class Main {
         myItem4.setCategory("Appetizer");
         myItem4.setIsNew(false);
 
-        myMenu.setItems(myItem1.menuItems);
-        myMenu.setItems(myItem2.menuItems);
-        myMenu.setItems(myItem3.menuItems);
-        myMenu.setItems(myItem4.menuItems);
+        myMenu.setItems(myItem1.getWholeItem());
+        myMenu.setItems(myItem2.getWholeItem());
+        myMenu.setItems(myItem3.getWholeItem());
+        myMenu.setItems(myItem4.getWholeItem());
 
         for (int counter = 0; counter < myMenu.getLength(); counter++) {
             int numColumns = myMenu.getItems(counter).keySet().size();
@@ -53,7 +53,7 @@ public class Main {
                 Object myKey = myMenu.getItems(counter).keySet().toArray()[counter2];
                 Object myVal = myMenu.getItems(counter).values().toArray()[counter2];
                 System.out.println(myKey + ": " + myVal);
-                System.out.println("Item is new? " + myMenu.getItems(counter).isNew());
+                //System.out.println("Item is new? " +  myMenu.;
             }
         }
 
