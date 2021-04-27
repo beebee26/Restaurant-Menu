@@ -41,28 +41,21 @@ public class Main {
         myItem4.setCategory("Appetizer");
         myItem4.setIsNew(false);
 
-        //System.out.println(myItem4.getValues());
-
         myMenu.setItems(myItem1.getValues());
         myMenu.setItems(myItem2.getValues());
         myMenu.setItems(myItem3.getValues());
         myMenu.setItems(myItem4.getValues());
 
-        //for (int counter = 0; counter < myMenu.getLength(); counter++) {
-          //  int numColumns = myMenu.getItems(counter);
+        for (int counter = 0; counter < myMenu.getLength(); counter++) {
+            int numColumns = myMenu.getItems(counter).keySet().size();
             System.out.println("*****");
-            for (int counter = 0; counter < myMenu.getLength(); counter++) {
-                //for (int counter2 = 0; counter < myMenu.getItems(counter)[0]; counter++) {
-                //Object myKey = myMenu.getItems(counter2);
-                //Object myVal = myMenu.getItems(counter2);
-                System.out.println("here3" + myMenu.getItems(counter));
-                System.out.println("here4" + myMenu.getItems(counter));
-                //System.out.println("here3" + myMenu.getItems(counter));
-                //System.out.println(myMenu.getItems(2));
-                //System.out.println(myMenu.getItems(3));
+            for (int counter2 = 0; counter2 < numColumns; counter2++) {
+                Object myKey = myMenu.getItems(counter).keySet().toArray()[counter2];
+                Object myVal = myMenu.getItems(counter).values().toArray()[counter2];
+                System.out.println(myKey + ": " + myVal);
                 //System.out.println("Item is new? " +  myMenu.;
             }
-        //}
+        }
 
         System.out.println("Menu last updated: " + myMenu.getDate());
     }

@@ -4,16 +4,13 @@ import java.util.ArrayList;
 import java.util.HashMap;
 
 public class Menu {
-    private ArrayList<Object> items = new ArrayList<>();
+    private ArrayList<HashMap<String,Object>> items = new ArrayList<>();
     private Date lastUpdated;
 
-    public void setItems(Object aItems) {
-        System.out.println("here" + aItems.toString());
+    public void setItems(HashMap<String, Object> aItems) {
         items.add(aItems);
-        //System.out.println("here2" + items.get());
     }
-    public Object getItems(int num) {
-        //System.out.println("here2" + items.get(0));
+    public HashMap<String, Object> getItems(int num) {
         return items.get(num);
     }
 
@@ -29,3 +26,4 @@ public class Menu {
     }
 
 }
+

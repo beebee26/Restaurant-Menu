@@ -1,56 +1,52 @@
 package restaurant;
 
-import java.util.ArrayList;
 import java.util.HashMap;
 
 public class MenuItems {
 
     private boolean isNew;
 
-    private ArrayList<Object> menuItems = new ArrayList<>();
+    private HashMap<String, Object> menuItems = new HashMap<>();
 
     public void setName(String aName) {
-
-        menuItems.add(aName);
-        //System.out.println(menuItems.get(1));
+        menuItems.put("Name", aName);
     }
     public Object getName() {
-        //System.out.println(menuItems.get(1));
-        return menuItems.get(0);
+        return menuItems.get("Name");
     }
 
-   // public HashMap<String, String> getWholeItem() {
-     //   return menuItems;
+    //public HashMap<String, Object> getWholeItem() {
+    //    return menuItems.values();
     //}
 
     public void setPrice(Double aPrice) {
-        menuItems.add(aPrice);
+        menuItems.put("Price", aPrice);
     }
     public Object getPrice() {
-        return menuItems.get(1);
+        return menuItems.get("Price");
     }
 
     public void setDescription(String aDescription) {
-        menuItems.add(aDescription);
+        menuItems.put("Description",  aDescription);
     }
     public Object getDescription() {
-        return menuItems.get(2);
+        return menuItems.get("Description");
     }
     public void setCategory(String aCategory) {
-        menuItems.add(aCategory);
+        menuItems.put("Category", aCategory);
     }
     public Object getCategory() {
-        return menuItems.get(3);
+        return menuItems.get("Category");
     }
 
     public void setIsNew(Boolean aIsNew) {
-        menuItems.add(aIsNew);
+        menuItems.put("Is New", aIsNew);
     }
     public Object getIsNew() {
-        return menuItems.get(4);
+        return menuItems.get("Is New");
     }
 
-    public String getValues() {
-        return menuItems.toString();
+    public HashMap<String, Object> getValues() {
+        return menuItems;
     }
 }
