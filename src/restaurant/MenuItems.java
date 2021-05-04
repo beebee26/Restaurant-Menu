@@ -1,12 +1,13 @@
 package restaurant;
-
+import java.awt.*;
+import java.time.LocalDate;
 import java.util.HashMap;
 
 public class MenuItems {
 
-    private boolean isNew;
-
     private HashMap<String, Object> menuItems = new HashMap<>();
+
+    private Boolean isNew = true;
 
     public void setName(String aName) {
         menuItems.put("Name", aName);
@@ -14,10 +15,6 @@ public class MenuItems {
     public Object getName() {
         return menuItems.get("Name");
     }
-
-    //public HashMap<String, Object> getWholeItem() {
-    //    return menuItems.values();
-    //}
 
     public void setPrice(Double aPrice) {
         menuItems.put("Price", aPrice);
@@ -39,11 +36,11 @@ public class MenuItems {
         return menuItems.get("Category");
     }
 
-    public void setIsNew(Boolean aIsNew) {
-        menuItems.put("Is New", aIsNew);
+    public void setDate(LocalDate newDate) {
+        menuItems.put("Date Added", newDate);
     }
-    public Object getIsNew() {
-        return menuItems.get("Is New");
+    public Object getDate() {
+        return menuItems.get("Date Added");
     }
 
     public HashMap<String, Object> getValues() {
