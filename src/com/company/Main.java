@@ -15,38 +15,34 @@ public class Main {
         myMenu.setDate(myDate);
 
         LocalDate date1 = LocalDate.of(2020,04,12);
-        MenuItems myItem1 = new MenuItems(); //("Hot Dog", 4.95, "Hot Dog in a bun with ketchup and mustard", "Main Course", true);
+        MenuItems myItem1 = new MenuItems();
         myItem1.setName("Hot Dog");
         myItem1.setDescription("Hot Dog in a bun with ketchup and mustard");
         myItem1.setPrice(4.95);
         myItem1.setCategory("Main Course");
         myItem1.setDate(date1);
-        //myItem1.setIsNew(true);
 
         LocalDate date2 = LocalDate.of(2020,05,22);
-        MenuItems myItem2 = new MenuItems(); //"Burger", 5.95, "On a bun with ketchup and mustard", "Main Course", false);
+        MenuItems myItem2 = new MenuItems();
         myItem2.setName("Burger");
         myItem2.setDescription("Burger on a bun with ketchup and mustard");
         myItem2.setPrice(5.95);
         myItem2.setCategory("Main Course");
         myItem2.setDate(date2);
-        //myItem2.setIsNew(true);
 
-        MenuItems myItem3 = new MenuItems(); //"Shake", 2.95, "Hot Dog in a bun with ketchup and mustard", "Main Course", true);
+        MenuItems myItem3 = new MenuItems();
         myItem3.setName("Shake");
         myItem3.setDescription("Vanilla shake with whipped cream");
         myItem3.setPrice(2.95);
         myItem3.setCategory("Dessert");
         myItem3.setDate(myDate);
-        //myItem3.setIsNew(true);
 
-        MenuItems myItem4 = new MenuItems(); //"Onion Rings", 3.95, "Hot Dog in a bun with ketchup and mustard", "Main Course", true);
+        MenuItems myItem4 = new MenuItems();
         myItem4.setName("Onion Rings");
         myItem4.setDescription("Fried with sauce");
         myItem4.setPrice(3.95);
         myItem4.setCategory("Appetizer");
         myItem4.setDate(myDate);
-        //myItem4.setIsNew(true);
 
         myMenu.setItems(myItem1.getValues());
         myMenu.setItems(myItem2.getValues());
@@ -64,7 +60,7 @@ public class Main {
                 System.out.println("Enter item name: ");
                 String addName = myObj.nextLine();
                 MenuItems newItem = new MenuItems();
-                //if (name = existimg name)
+
                 System.out.println("Enter item description: ");
                 String addDescription = myObj.nextLine();
 
@@ -103,7 +99,6 @@ public class Main {
             System.out.println("*******************");
             System.out.println("Menu last updated: " + myMenu.getDate());
         }
-
     }
 
     private static void printAll(Menu menu) {
@@ -113,9 +108,10 @@ public class Main {
             for (int counter2 = 0; counter2 < numColumns; counter2++) {
                 Object myKey = menu.getItems(counter).keySet().toArray()[counter2];
                 Object myVal = menu.getItems(counter).values().toArray()[counter2];
-                System.out.println(myKey + ": " + myVal);
+                if (!myKey.equals("Date Added")) {
+                    System.out.println(myKey + ": " + myVal);
+                }
             }
-            //menu.compareDates(menu.getItems(counter).values().toArray()[3]);
             System.out.println("Item is new? " +  menu.compareDates(menu.getItems(counter).values().toArray()[3]));
         }
     }
@@ -131,7 +127,6 @@ public class Main {
                     System.out.println(myKey + ": " + myVal);
                 }
             }
-                //System.out.println("Item is new? " +  myMenu.;
         }
     }
 }

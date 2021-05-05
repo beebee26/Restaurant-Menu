@@ -7,8 +7,6 @@ public class MenuItems {
 
     private HashMap<String, Object> menuItems = new HashMap<>();
 
-    private Boolean isNew = true;
-
     public void setName(String aName) {
         menuItems.put("Name", aName);
     }
@@ -37,7 +35,7 @@ public class MenuItems {
     }
 
     public void setDate(LocalDate newDate) {
-        menuItems.put("Date Added", newDate);
+       menuItems.put("Date Added", newDate);
     }
     public Object getDate() {
         return menuItems.get("Date Added");
